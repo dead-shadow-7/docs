@@ -1,8 +1,8 @@
-# Docs by LangChain: Open source (Python)
+# Docs by LangChain: Releases (Python)
 
-> Markdown index of the Open source (Python) documentation.
+> Markdown index of the Releases (Python) documentation.
 
-## Open source (Python)
+## Releases (Python)
 
 - [Changelog](https://docs.langchain.com/oss/python/releases/changelog.md)
 - [What's new in LangChain v1](https://docs.langchain.com/oss/python/releases/langchain-v1.md)

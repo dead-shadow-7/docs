@@ -49,7 +49,7 @@ Any source that writes feedback to a run contributes to this prioritization auto
 Setting up Engine is a two-step process: an [Organization Admin](/langsmith/rbac#organization-admin) first enables Engine for the [workspace](/langsmith/administration-overview#workspaces), then any user can configure Engine for each tracing project.
 
 <Note>
-On Self-hosted LangSmith, an operator must enable Engine in the LangSmith Helm chart before either step is available. Refer to [Enable Engine](/langsmith/deploy-self-hosted-full-platform#enable-engine) and [Engine on Self-hosted](/langsmith/engine-self-hosted).
+On Self-hosted LangSmith, an operator must enable Engine in the LangSmith Helm chart before either step is available. Refer to [Engine on Self-hosted](/langsmith/engine-self-hosted).
 </Note>
 
 ### Enable Engine for your organization
@@ -96,7 +96,12 @@ Organization Admins can set spend limits at two levels:
 
 You can enter limits in LCU or USD (1 LCU = $1.50). When a limit is reached, LangSmith pauses new Engine runs until the limit is raised or the next monthly billing period begins.
 
-Leave the limit blank to allow unlimited Engine spend. To stop Engine entirely, use the **Enable Engine** toggle in **Settings > Engine enablement**.
+The two levels default differently:
+
+- **Org-wide limit**: Choose **Default**, **No limit**, or a custom cap. Until an admin chooses, the default applies (500 LCU per month, about $750), so Engine spend is capped even though no one has set a limit. The **Engine enablement** page names the enforced limit and its source.
+- **Per-project limit**: Leave the field blank for no limit. Use **Remove limit** to clear a cap you set earlier.
+
+To stop Engine entirely, use the **Enable Engine** toggle in **Settings > Engine enablement**.
 
 To monitor usage, you can view your organization's monthly LCU spend on the **Engine enablement** page in **Settings**, or view per-project spend in the [**Engine Settings**](#configure-engine) panel for each tracing project.
 
@@ -145,7 +150,7 @@ Set the scope in either of two places, using the same control:
 - **Engine setup**: In the **Find and fix your agent's issues** panel, under **Focus on specific traces**.
 - **Engine Settings**: In the **Focus on specific traces** section of the [**Engine Settings**](#configure-engine) panel. Edits here save automatically.
 
-Add scope conditions with the same [filter editor](/langsmith/filter-traces-in-application#create-and-apply-filters) used on the tracing project's **Tracing** tab. You can add one condition of each kind, **up to two**:
+Add scope conditions with the filter editor. You can add one condition of each kind, **up to two**:
 
 - **Run Name**: Pick a run or agent name. The value field autocompletes from the run names in your project's recent traces.
 - **Metadata**: Pick a metadata key, then a value. Both autocomplete from the metadata present on your project's recent runs.
